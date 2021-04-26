@@ -10,6 +10,7 @@ const App = () => {
   const [player, setPlayer] = useState("O");
   const [result, setResult] = useState({ winner: "none", state: "none" });
 
+  let winnerStr;
   useEffect(() => {
     checkWinner();
     checkIfTie();
@@ -22,7 +23,8 @@ const App = () => {
 
   useEffect(() => {
     if (result.state !== "none") {
-      alert(`Game finished! Winner: ${result.winner}`);
+      // alert(`Game finished! Winner: ${result.winner}`);
+      winnerStr = `Game finished! Winner: ${result.winner}`;
       restartGame();
     }
   }, [result]);
@@ -79,7 +81,8 @@ const App = () => {
   return (
     <>
       <div className="App">
-        <h1>Tic Tac Toe</h1>
+        <h1>Tic Tac Toe </h1>
+        <h2>{result.winner !== "none" ? `Winner is: ${result.winner}` : ``}</h2>
         <div className="board">
           <div className="row">
             <Square val={board[0]} chooseSquare={() => chooseSquare(0)} />
