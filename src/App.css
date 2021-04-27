@@ -97,7 +97,8 @@
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   /* transform: scaleY(0.7); */
   color: white;
-  text-shadow: 1px 10px 18px rgb(45, 141, 185);
+  /* text-shadow: 1px 10px 18px rgb(45, 141, 185); */
+  text-shadow: 1px 2px 1px rgb(45, 141, 185);
 }
 
 .style-o {
@@ -109,7 +110,8 @@
   font-weight: 1000;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   /* transform: scaleY(0.7); */
-  text-shadow: 1px 10px 18px rgb(225, 111, 14);
+  /* text-shadow: 1px 10px 18px rgb(225, 111, 14); */
+  text-shadow: 1px 2px 1px rgb(225, 111, 14);
 }
 
 /* For Responsiveness */
