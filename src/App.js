@@ -99,13 +99,13 @@ const App = () => {
 
         <div className="heading">
           <div className="scorecard">
-            <p>Player 1</p>
+            <p>Player 1 (X)</p>
             <div className="score">
               <p>
                 {winnerCountX} - {winnerCountO}
               </p>
             </div>
-            <p>Player 2</p>
+            <p>Player 2 (O)</p>
           </div>
         </div>
         <div className="board">
