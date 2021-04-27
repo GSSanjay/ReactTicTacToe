@@ -9,8 +9,11 @@ const App = () => {
   const [board, setBoard] = useState(["", "", "", "", "", "", "", "", ""]);
   const [player, setPlayer] = useState("O");
   const [result, setResult] = useState({ winner: "none", state: "none" });
+  const [winnerCountX, setWinnerCountX] = useState(0);
+  const [winnerCountO, setWinnerCountO] = useState(0);
 
-  let winnerStr;
+  // let winnerStrX = `Player 1: ${winnerCountX}`;
+  // let winnerStrO = `Player 2: ${winnerCountO}`;
   useEffect(() => {
     checkWinner();
     checkIfTie();
@@ -24,8 +27,9 @@ const App = () => {
   useEffect(() => {
     if (result.state !== "none") {
       // alert(`Game finished! Winner: ${result.winner}`);
-      winnerStr = `Game finished! Winner: ${result.winner}`;
       restartGame();
+
+      resetWinnerStr();
     }
   }, [result]);
 
@@ -54,6 +58,11 @@ const App = () => {
       });
       if (foundWinningPattern) {
         setResult({ winner: player, state: "Won" });
+        if (player === "X") {
+          setWinnerCountX(winnerCountX + 1);
+        } else if (player === "O") {
+          setWinnerCountO(winnerCountO + 1);
+        }
       }
     });
   };
@@ -78,11 +87,27 @@ const App = () => {
     setPlayer("O");
   };
 
+  const resetWinnerStr = () => {
+    // winnerStr = "";
+  };
+
   return (
     <>
       <div className="App">
-        <h1>Tic Tac Toe </h1>
-        <h2>{result.winner !== "none" ? `Winner is: ${result.winner}` : ``}</h2>
+        <h1 className="title">Tic Tac </h1>
+        {/* <h2>{result.winner !== "none" ? winnerStr : ``}</h2> */}
+
+        <div className="heading">
+          <div className="scorecard">
+            <p>Player 1</p>
+            <div className="score">
+              <p>
+                {winnerCountX} - {winnerCountO}
+              </p>
+            </div>
+            <p>Player 2</p>
+          </div>
+        </div>
         <div className="board">
           <div className="row">
             <Square val={board[0]} chooseSquare={() => chooseSquare(0)} />
