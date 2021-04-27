@@ -127,6 +127,11 @@
   cursor: pointer;
 }
 
+.btn:hover {
+  background: rgb(225, 111, 14);
+  color: white;
+}
+
 /* For Responsiveness */
 
 @media (max-width: 768px) {
