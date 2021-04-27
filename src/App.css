@@ -73,7 +73,7 @@
 .square {
   flex: 33%;
   height: 100%;
-  border: 1px solid rgb(231 231 231);
+  border: 1px solid rgb(231, 231, 231);
   border-bottom: none;
   cursor: pointer;
   display: grid;
@@ -112,6 +112,19 @@
   /* transform: scaleY(0.7); */
   /* text-shadow: 1px 10px 18px rgb(225, 111, 14); */
   text-shadow: 1px 2px 1px rgb(225, 111, 14);
+}
+
+.btn {
+  width: 100px;
+  height: 40px;
+  margin-top: 2rem;
+  outline: none;
+  border: none;
+  border-radius: 20px;
+  background: rgb(45, 141, 185);
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  cursor: pointer;
 }
 
 /* For Responsiveness */

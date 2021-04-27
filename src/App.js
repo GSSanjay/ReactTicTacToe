@@ -125,6 +125,9 @@ const App = () => {
             <Square val={board[8]} chooseSquare={() => chooseSquare(8)} />
           </div>
         </div>
+        <button className="btn" onClick={restartGame}>
+          Restart
+        </button>
       </div>
     </>
   );
